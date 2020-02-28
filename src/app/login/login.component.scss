@@ -1,0 +1,24 @@
+div.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  div.register {
+    button {
+      width: 100%;
+      padding: 14px 20px;
+      margin: 8px 0;
+      border: 1px solid #AD904F;
+      background-color: white;
+      color: #AD904F;
+      cursor: pointer;
+      outline: none;
+
+      &:hover {
+        border: none;
+        background-color: #AD904F;
+        color: white
+      }
+    }
+  }
+}

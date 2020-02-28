@@ -1,0 +1,25 @@
+div.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  div.backLogin {
+    button {
+      width: 100%;
+      padding: 14px 20px;
+      margin: 8px 0;
+      border: 1px solid rgb(19, 17, 13);
+      background-color: white;
+      color: #AD904F;
+      cursor: pointer;
+      outline: none;
+
+      &:hover {
+        border: none;
+        background-color: #AD904F;
+        color: white
+      }
+    }
+
+  }
+}
