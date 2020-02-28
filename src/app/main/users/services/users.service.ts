@@ -8,8 +8,8 @@ import { Observable, of } from 'rxjs';
 export class UsersService {
     private usersBDD: Array<any> = [
         {
-            userName: 'gerard1',
-            password: 'passTest1'
+            userName: 'duttiTest',
+            password: 'duttiPass'
         }
     ]; // It simulates a users list taked from a Database
 
