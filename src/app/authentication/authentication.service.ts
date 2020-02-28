@@ -18,11 +18,11 @@ export class AuthenticationService implements OnDestroy {
     public login(userName, password): Observable<any> {
 
         let response;
-        return this.userService.getByUserName(userName)
+        return this.userService.getUserByName(userName)
             .pipe(
                 map(
                     user => {
-                        if (user !== null && user.password === password) {
+                        if (user && user.password === password) {
                             response = { success: true };
                         } else {
                             response = { success: false, message: 'UserName or password is incorrect' };
