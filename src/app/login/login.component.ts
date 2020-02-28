@@ -18,14 +18,14 @@ export class LoginComponent {
   constructor(private authenticationService: AuthenticationService, private router: Router) { }
 
   public login() {
-    const userName = this.form.get('userName');
-    const password = this.form.get('password');
+    const userName = this.form.get('userName').value;
+    const password = this.form.get('password').value;
     this.authenticationService.login(userName, password)
       .subscribe(
         resp => {
           if (resp.success) {
             this.authenticationService.setCredentials(userName, password);
-            this.router.navigate(['/ships']);
+            this.router.navigate(['/Main/Ships']);
           } else {
             console.log('Error');
           }

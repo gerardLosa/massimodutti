@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
 import { LoginComponent } from 'src/app/login/login.component';
+import { LoginRoutingModule } from 'src/app/login/login.routing';
 
 
 @NgModule({
@@ -8,7 +9,8 @@ import { LoginComponent } from 'src/app/login/login.component';
         LoginComponent
     ],
     imports: [
-        ReactiveFormsModule
+        ReactiveFormsModule,
+        LoginRoutingModule
     ]
 })
 export class LoginModule { }
