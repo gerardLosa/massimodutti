@@ -1,8 +1,8 @@
-import { Injectable } from '@angular/core';
+import { Injectable, OnDestroy } from '@angular/core';
 import { AutoUnsubscribe } from 'ngx-auto-unsubscribe';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
-import { UsersService } from 'src/app/main/users/users.service';
+import { UsersService } from 'src/app/main/users/services/users.service';
 import { Base64 } from 'src/app/utils/base64-encoder';
 
 @AutoUnsubscribe()
@@ -10,38 +10,38 @@ import { Base64 } from 'src/app/utils/base64-encoder';
     providedIn: 'root'
 })
 
-export class AuthenticationService {
+export class AuthenticationService implements OnDestroy {
 
     constructor(private userService: UsersService) {
 
     }
-    public login(username, password): Observable<any> {
+    public login(userName, password): Observable<any> {
 
         let response;
-        return this.userService.getByUsername(username)
+        return this.userService.getByUserName(userName)
             .pipe(
                 map(
                     user => {
                         if (user !== null && user.password === password) {
                             response = { success: true };
                         } else {
-                            response = { success: false, message: 'Username or password is incorrect' };
+                            response = { success: false, message: 'UserName or password is incorrect' };
                         }
                         return response;
                     })
             );
     }
 
-    public setCredentials(username, password) {
-        const authdata = Base64.encode(username + ':' + password);
+    public setCredentials(userName, password) {
+        const authdata = Base64.encode(userName + ':' + password);
 
         const globals = {
             currentUser: {
-                username,
+                userName,
                 authdata
             }
         };
     }
 
-    public onDestroy(): void { }
+    public ngOnDestroy(): void { }
 }
