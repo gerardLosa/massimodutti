@@ -10,24 +10,22 @@ export class UsersService {
         {
             userName: 'gerard1',
             password: 'passTest1'
-        },
-        {
-            userName: 'gerard2',
-            password: 'passTest2'
         }
     ]; // It simulates a users list taked from a Database
 
-    public getByUserName(userName: string): Observable<any> {
-        return of(this.usersBDD.find(user => user.name = userName));
+    public getUserByName(userName: string): Observable<any> {
+        return of(this.usersBDD.find(user => user.userName === userName));
     }
 
     public addUser(userName: string, password: string): void {
 
-        this.usersBDD.push(
-            {
-                userName,
-                password
-            }
-        );
+        if (!this.usersBDD.some(user => user.userName === userName)) {
+            this.usersBDD.push(
+                {
+                    userName,
+                    password
+                }
+            );
+        }
     }
 }
