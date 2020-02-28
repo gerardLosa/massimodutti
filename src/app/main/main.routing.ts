@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { ShipsComponent } from 'src/app/main/ships/components/ships/ships.component';
+import { ShipsListPageComponent } from 'src/app/main/ships/pages/ships-list-page/ships-list-page.component';
 
 const mainRoutes: Routes = [
     {
@@ -8,7 +8,7 @@ const mainRoutes: Routes = [
         children: [
             {
                 path: 'Ships',
-                component: ShipsComponent
+                component: ShipsListPageComponent
             },
             { path: '', redirectTo: 'Ships', pathMatch: 'full' }
         ]

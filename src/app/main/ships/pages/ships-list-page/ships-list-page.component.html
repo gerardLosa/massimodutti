@@ -1,0 +1,8 @@
+<div class="container">
+  <div class="ships">
+    <div class="ship" *ngFor="let ship of shipsList">
+      <ships [ship]="ship"></ships>
+    </div>
+  </div>
+  <button type="button" (click)="verMas()" *ngIf="shipsList.length && hideMoreButton">+</button>
+</div>

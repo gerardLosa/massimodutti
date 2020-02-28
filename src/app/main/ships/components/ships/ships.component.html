@@ -1,1 +1,6 @@
-<p>ships works!</p>
+<div class="container">
+  <h3 class="title">{{ship.name}}</h3>
+  <div class="image" *ngIf="shipId">
+    <img src="https://starwars-visualguide.com/assets/img/starships/{{shipId}}.jpg" (error)="errorHandler($event)">
+  </div>
+</div>
