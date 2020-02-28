@@ -1,12 +1,22 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { LoginModule } from './login/login.module';
+import { LoginModule } from 'src/app/login/login.module';
+import { MainModule } from 'src/app/main/main.module';
+import { RegisterModule } from 'src/app/register/register.module';
 
 
-const routes: Routes = [
+const appRoutes: Routes = [
   {
     path: 'Login',
     loadChildren: (): Promise<LoginModule> => import('./login/login.module').then(m => m.LoginModule),
+  },
+  {
+    path: 'Register',
+    loadChildren: (): Promise<RegisterModule> => import('./register/register.module').then(m => m.RegisterModule),
+  },
+  {
+    path: 'Main',
+    loadChildren: (): Promise<MainModule> => import('./main/main.module').then(m => m.MainModule),
   },
   { path: '', redirectTo: 'Login', pathMatch: 'full' }
 ];
@@ -14,7 +24,7 @@ const routes: Routes = [
 @NgModule({
   imports: [
     RouterModule.forRoot(
-      routes
+      appRoutes
     )
   ],
   exports: [
