@@ -12,6 +12,8 @@ import { Base64 } from 'src/app/utils/base64-encoder';
 
 export class AuthenticationService implements OnDestroy {
 
+    private access = false;
+
     constructor(private userService: UsersService) {
 
     }
@@ -24,6 +26,7 @@ export class AuthenticationService implements OnDestroy {
                     user => {
                         if (user && user.password === password) {
                             response = { success: true };
+                            this.access = true;
                         } else {
                             response = { success: false, message: 'UserName or password is incorrect' };
                         }
@@ -41,6 +44,10 @@ export class AuthenticationService implements OnDestroy {
                 authdata
             }
         };
+    }
+
+    public getAccess() {
+        return this.access;
     }
 
     public ngOnDestroy(): void { }
