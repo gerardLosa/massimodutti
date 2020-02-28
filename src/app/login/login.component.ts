@@ -4,7 +4,7 @@ import { Router } from '@angular/router';
 import { AuthenticationService } from 'src/app/authentication/authentication.service';
 
 @Component({
-  selector: 'app-login',
+  selector: 'login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.scss']
 })
@@ -27,10 +27,14 @@ export class LoginComponent {
             this.authenticationService.setCredentials(userName, password);
             this.router.navigate(['/Main/Ships']);
           } else {
-            console.log('Error');
+            console.log(resp.message);
           }
         }
       );
+  }
+
+  public goRegister() {
+    this.router.navigate(['/Register']);
   }
 
 }

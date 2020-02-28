@@ -1,17 +1,7 @@
 <div class="container">
   <h2>Login</h2>
-  <form name="form" [formGroup]="form">
-    <div class="userName" [class.error]="">
-      <label for="username">Username</label>
-      <input type="text" formControlName="userName" />
-    </div>
-    <div class="password" [class.error]="">
-      <label for="password">Password</label>
-      <input type="password" formControlName="password" />
-      <span *ngIf="form.controls.password.invalid">Password is required</span>
-    </div>
-    <div class="submit">
-      <button class="submit" (click)="login()" [disabled]="form.invalid">Login</button>
-    </div>
-  </form>
+  <user-data-form [formGroup]="form" (userActionClicked)="login()"></user-data-form>
+  <div class="register">
+    <button class="register" (click)="goRegister()">Register</button>
+  </div>
 </div>
