@@ -1,10 +1,14 @@
 import { NgModule } from '@angular/core';
-import { LoginComponent } from './login/login/login.component';
+import { MainRoutingModule } from 'src/app/main/main.routing';
+import { ShipsComponent } from './ships/components/ships/ships.component';
 
 
 @NgModule({
     declarations: [
-        LoginComponent
+        ShipsComponent
+    ],
+    imports: [
+        MainRoutingModule
     ]
 })
 export class MainModule { }
