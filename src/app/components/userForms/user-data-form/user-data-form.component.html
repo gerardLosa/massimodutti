@@ -7,10 +7,9 @@
     <div class="password" [class.error]="">
       <label for="password">Password</label>
       <input type="password" formControlName="password" />
-      <span *ngIf="formGroup.controls.password.invalid">Password is required</span>
     </div>
     <div class="submit">
-      <button class="submit" (click)="userAction()" [disabled]="formGroup.invalid">Submit</button>
+      <button type="button" class="button" (click)="userAction()" [disabled]="formGroup.invalid">Submit</button>
     </div>
   </form>
 </div>
