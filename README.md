@@ -21,3 +21,16 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 ## Commits
 
 My commits complete the sentence This commit will...
+
+## Completed tasks
+
+- Angular 9 app creation
+- Add some style (Massimo Dutti colors)
+- Set ships list as first page when you are logged
+- Avoid navigate directly to a page without previous log in
+- Hide see more ships button when there aren't more
+- Show no image available image when no ship pic
+- Meets the minimum requirements
+
+## Log in
+You can access with the userName: duttiTest and the password: duttiPass
