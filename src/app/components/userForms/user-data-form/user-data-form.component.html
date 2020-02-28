@@ -1,0 +1,16 @@
+<div class="container">
+  <form name="form" [formGroup]="formGroup">
+    <div class="userName" [class.error]="">
+      <label for="username">Username</label>
+      <input type="text" formControlName="userName" />
+    </div>
+    <div class="password" [class.error]="">
+      <label for="password">Password</label>
+      <input type="password" formControlName="password" />
+      <span *ngIf="formGroup.controls.password.invalid">Password is required</span>
+    </div>
+    <div class="submit">
+      <button class="submit" (click)="userAction()" [disabled]="formGroup.invalid">Submit</button>
+    </div>
+  </form>
+</div>
