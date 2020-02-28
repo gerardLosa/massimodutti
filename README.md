@@ -31,3 +31,6 @@ My commits complete the sentence This commit will...
 - Hide see more ships button when there aren't more
 - Show no image available image when no ship pic
 - Meets the minimum requirements
+
+## Log in
+You can access with the userName: duttiTest and the password: duttiPass
